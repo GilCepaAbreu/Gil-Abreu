@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gil Abreu - Desenvolvedor Web</title>
-    <meta name="description" content="Desenvolvedor Web especializado em criação de websites modernos e responsivos. Ofereço soluções completas para sua presença digital.">
+    <title>CodeCraft Studio - Gil Abreu | Desenvolvimento Web Profissional</title>
+    <meta name="description" content="CodeCraft Studio - Desenvolvedor Web especializado em criação de websites modernos e responsivos. Ofereço soluções completas para sua presença digital.">
     
     <!-- Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -49,6 +49,20 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .logo-brand {
+            color: white;
+            font-weight: 800;
+        }
+
+        .logo-studio {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 400;
+            font-style: italic;
         }
 
         .nav-links {
@@ -83,6 +97,26 @@
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+        }
+
+        .hero-brand {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .brand-name {
+            font-weight: 800;
+            color: white;
+        }
+
+        .brand-studio {
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
         }
 
         .hero h1 {
@@ -445,6 +479,12 @@
                 display: none;
             }
 
+            .hero-brand {
+                font-size: 1.5rem;
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -504,7 +544,10 @@
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">Gil Abreu</div>
+            <div class="logo">
+                <span class="logo-brand">CodeCraft</span>
+                <span class="logo-studio">Studio</span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Início</a></li>
                 <li><a href="#about">Sobre</a></li>
@@ -518,8 +561,12 @@
     <!-- Seção Hero -->
     <section id="home" class="hero">
         <div class="hero-content">
+            <div class="hero-brand">
+                <span class="brand-name">CodeCraft</span>
+                <span class="brand-studio">Studio</span>
+            </div>
             <h1>Gil Abreu</h1>
-            <p class="subtitle">Desenvolvedor Web </p>
+            <p class="subtitle">Desenvolvedor Web & Designer</p>
             <p>Criando experiências digitais únicas e websites modernos que impulsionam seu negócio para o próximo nível.</p>
             <a href="#contact" class="cta-button">Vamos Conversar</a>
         </div>
@@ -702,7 +749,7 @@
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
         </div> -->
-        <p>&copy; 2025 Gil Abreu. Todos os direitos reservados.</p>
+        <p>&copy; 2025 CodeCraft Studio - Gil Abreu. Todos os direitos reservados.</p>
     </footer>
 
     <script>
