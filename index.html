@@ -187,6 +187,37 @@
             left: 100%;
         }
 
+        /* Seletor de idioma */
+        .language-selector {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        .language-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .language-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .language-btn.active {
+            background: white;
+            color: #667eea;
+            font-weight: 600;
+        }
+
         /* Seção Hero */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -882,6 +913,10 @@
                 display: none;
             }
 
+            .language-selector {
+                margin-left: 0;
+            }
+
             .hero-brand {
                 font-size: 1.5rem;
                 flex-direction: column;
@@ -1047,12 +1082,16 @@
                 <span class="logo-studio">Studio</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#services">Serviços</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contato</a></li>
+                <li><a href="#home" data-lang-key="nav_home">Início</a></li>
+                <li><a href="#about" data-lang-key="nav_about">Sobre</a></li>
+                <li><a href="#services" data-lang-key="nav_services">Serviços</a></li>
+                <li><a href="#portfolio" data-lang-key="nav_portfolio">Portfolio</a></li>
+                <li><a href="#contact" data-lang-key="nav_contact">Contato</a></li>
             </ul>
+            <div class="language-selector">
+                <button class="language-btn active" data-lang="pt">PT</button>
+                <button class="language-btn" data-lang="en">EN</button>
+            </div>
         </nav>
     </header>
 
@@ -1064,24 +1103,24 @@
                 <span class="brand-studio">Studio</span>
             </div>
             <h1>Gil Abreu</h1>
-            <p class="subtitle">Desenvolvedor Web & Designer</p>
-            <p>Criando experiências digitais únicas e websites modernos que impulsionam seu negócio para o próximo nível.</p>
-            <a href="#contact" class="cta-button">Vamos Conversar</a>
+            <p class="subtitle" data-lang-key="hero_subtitle">Desenvolvedor Web & Designer</p>
+            <p data-lang-key="hero_description">Criando experiências digitais únicas e websites modernos que impulsionam seu negócio para o próximo nível.</p>
+            <a href="#contact" class="cta-button" data-lang-key="hero_cta">Vamos Conversar</a>
         </div>
     </section>
 
     <!-- Seção Sobre -->
     <section id="about" class="section">
-        <h2 class="section-title">Sobre Mim</h2>
+        <h2 class="section-title" data-lang-key="about_title">Sobre Mim</h2>
         <div class="about-content">
             <div class="about-image">
                 <img src="gil_abreu.jpg" alt="Gil Abreu - Desenvolvedor Web" class="profile-img">
             </div>
             <div class="about-text">
-                <h3>Desenvolvedor Web</h3>
-                <p>Com bastante experiência em desenvolvimento web, sou especializado em criar soluções digitais que combinam funcionalidade excepcional com design atrativo. Minha paixão é transformar ideias em realidade digital.</p>
-                <p>Trabalho com as mais modernas tecnologias e frameworks para garantir que seus projetos sejam não apenas visualmente impressionantes, mas também performáticos e otimizados para todos os dispositivos.</p>
-                <p>Cada projeto é uma oportunidade de criar algo único e impactante. Foco sempre na experiência do utilizador e na performance técnica.</p>
+                <h3 data-lang-key="about_heading">Desenvolvedor Web</h3>
+                <p data-lang-key="about_p1">Com bastante experiência em desenvolvimento web, sou especializado em criar soluções digitais que combinam funcionalidade excepcional com design atrativo. Minha paixão é transformar ideias em realidade digital.</p>
+                <p data-lang-key="about_p2">Trabalho com as mais modernas tecnologias e frameworks para garantir que seus projetos sejam não apenas visualmente impressionantes, mas também performáticos e otimizados para todos os dispositivos.</p>
+                <p data-lang-key="about_p3">Cada projeto é uma oportunidade de criar algo único e impactante. Foco sempre na experiência do utilizador e na performance técnica.</p>
                 <div class="skills">
                     <span class="skill-tag">HTML5</span>
                     <span class="skill-tag">CSS3</span>
@@ -1100,42 +1139,42 @@
 
     <!-- Seção Serviços -->
     <section id="services" class="section services">
-        <h2 class="section-title">Meus Serviços</h2>
+        <h2 class="section-title" data-lang-key="services_title">Meus Serviços</h2>
         <div class="services-grid">
             <div class="service-card fade-in">
                 <i class="fas fa-laptop-code service-icon"></i>
-                <h3>Desenvolvimento Web</h3>
-                <p>Criação de websites modernos, responsivos e otimizados. Do design à implementação, cuidando de cada detalhe do seu projeto.</p>
+                <h3 data-lang-key="service1_title">Desenvolvimento Web</h3>
+                <p data-lang-key="service1_desc">Criação de websites modernos, responsivos e otimizados. Do design à implementação, cuidando de cada detalhe do seu projeto.</p>
             </div>
             <div class="service-card fade-in">
                 <i class="fas fa-mobile-alt service-icon"></i>
-                <h3>Design Responsivo</h3>
-                <p>Desenvolvimento de interfaces que funcionam perfeitamente em todos os dispositivos - desktop, tablet e mobile.</p>
+                <h3 data-lang-key="service2_title">Design Responsivo</h3>
+                <p data-lang-key="service2_desc">Desenvolvimento de interfaces que funcionam perfeitamente em todos os dispositivos - desktop, tablet e mobile.</p>
             </div>
             <div class="service-card fade-in">
                 <i class="fas fa-tools service-icon"></i>
-                <h3>Manutenção</h3>
-                <p>Suporte contínuo, atualizações de segurança e melhorias para manter seu website sempre funcionando perfeitamente.</p>
+                <h3 data-lang-key="service3_title">Manutenção</h3>
+                <p data-lang-key="service3_desc">Suporte contínuo, atualizações de segurança e melhorias para manter seu website sempre funcionando perfeitamente.</p>
             </div>
             <div class="service-card fade-in">
                 <i class="fas fa-graduation-cap service-icon"></i>
-                <h3>Consultoria</h3>
-                <p>Análise de projetos existentes e consultoria técnica para otimização e modernização de sistemas web.</p>
+                <h3 data-lang-key="service4_title">Consultoria</h3>
+                <p data-lang-key="service4_desc">Análise de projetos existentes e consultoria técnica para otimização e modernização de sistemas web.</p>
             </div>
         </div>
     </section>
 
     <!-- Seção Portfolio -->
     <section id="portfolio" class="section">
-        <h2 class="section-title">Meus Trabalhos</h2>
+        <h2 class="section-title" data-lang-key="portfolio_title">Meus Trabalhos</h2>
         <div class="portfolio-grid">
             <div class="portfolio-item fade-in">
                 <div class="portfolio-image">
                     <i class="fas fa-store" style="font-size: 3rem;"></i>
                 </div>
                 <div class="portfolio-content">
-                    <h3>Website para Escolas</h3>
-                    <p>Plataforma educacional com recursos de gestão de alunos, professores e conteúdo didático.</p>
+                    <h3 data-lang-key="project1_title">Website para Escolas</h3>
+                    <p data-lang-key="project1_desc">Plataforma educacional com recursos de gestão de alunos, professores e conteúdo didático.</p>
                     <div class="portfolio-tech">
                         <span class="tech-tag">PHP</span>
                         <span class="tech-tag">MySQL</span>
@@ -1149,8 +1188,8 @@
                     <i class="fas fa-briefcase" style="font-size: 3rem;"></i>
                 </div>
                 <div class="portfolio-content">
-                    <h3>Website Corporativos</h3>
-                    <p>Site institucional moderno com foco em conversão e experiência do utilizador otimizada.</p>
+                    <h3 data-lang-key="project2_title">Website Corporativos</h3>
+                    <p data-lang-key="project2_desc">Site institucional moderno com foco em conversão e experiência do utilizador otimizada.</p>
                     <div class="portfolio-tech">
                         <span class="tech-tag">HTML</span>
                         <span class="tech-tag">JS</span>
@@ -1164,13 +1203,13 @@
 
     <!-- Seção Contato -->
     <section id="contact" class="section contact">
-        <h2 class="section-title" style="color: white;">Vamos Trabalhar Juntos</h2>
+        <h2 class="section-title" style="color: white;" data-lang-key="contact_title">Vamos Trabalhar Juntos</h2>
         <div class="contact-content-centered">
             <div class="contact-card">
                 <div class="contact-header">
                     <i class="fas fa-handshake contact-main-icon"></i>
-                    <h3>Pronto para dar vida ao seu projeto?</h3>
-                    <p>Entre em contato e vamos criar algo incrível juntos!</p>
+                    <h3 data-lang-key="contact_heading">Pronto para dar vida ao seu projeto?</h3>
+                    <p data-lang-key="contact_desc">Entre em contato e vamos criar algo incrível juntos!</p>
                 </div>
                 
                 <div class="contact-info-grid">
@@ -1189,7 +1228,7 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="contact-details">
-                            <h4>Telefone</h4>
+                            <h4 data-lang-key="contact_phone">Telefone</h4>
                             <span>+351 926 696 208</span>
                         </div>
                     </div>
@@ -1199,7 +1238,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-details">
-                            <h4>Localização</h4>
+                            <h4 data-lang-key="contact_location">Localização</h4>
                             <span>Braga, Portugal</span>
                         </div>
                     </div>
@@ -1208,11 +1247,11 @@
                 <div class="contact-cta">
                     <a href="mailto:gil.cepa.abreu@gmail.com" class="contact-btn">
                         <i class="fas fa-paper-plane"></i>
-                        Enviar Email
+                        <span data-lang-key="contact_email_btn">Enviar Email</span>
                     </a>
                     <a href="tel:+351926696208" class="contact-btn contact-btn-secondary">
                         <i class="fas fa-phone"></i>
-                        Ligar Agora
+                        <span data-lang-key="contact_call_btn">Ligar Agora</span>
                     </a>
                 </div>
             </div>
@@ -1227,10 +1266,134 @@
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
         </div> -->
-        <p>&copy; 2025 CodeCraft Studio - Gil Abreu. Todos os direitos reservados.</p>
+        <p data-lang-key="footer_copyright">&copy; 2025 CodeCraft Studio - Gil Abreu. Todos os direitos reservados.</p>
     </footer>
 
     <script>
+        // Sistema de Tradução
+        const translations = {
+            pt: {
+                nav_home: "Início",
+                nav_about: "Sobre",
+                nav_services: "Serviços", 
+                nav_portfolio: "Portfolio",
+                nav_contact: "Contato",
+                hero_subtitle: "Desenvolvedor Web & Designer",
+                hero_description: "Criando experiências digitais únicas e websites modernos que impulsionam seu negócio para o próximo nível.",
+                hero_cta: "Vamos Conversar",
+                about_title: "Sobre Mim",
+                about_heading: "Desenvolvedor Web",
+                about_p1: "Com bastante experiência em desenvolvimento web, sou especializado em criar soluções digitais que combinam funcionalidade excepcional com design atrativo. Minha paixão é transformar ideias em realidade digital.",
+                about_p2: "Trabalho com as mais modernas tecnologias e frameworks para garantir que seus projetos sejam não apenas visualmente impressionantes, mas também performáticos e otimizados para todos os dispositivos.",
+                about_p3: "Cada projeto é uma oportunidade de criar algo único e impactante. Foco sempre na experiência do utilizador e na performance técnica.",
+                services_title: "Meus Serviços",
+                service1_title: "Desenvolvimento Web",
+                service1_desc: "Criação de websites modernos, responsivos e otimizados. Do design à implementação, cuidando de cada detalhe do seu projeto.",
+                service2_title: "Design Responsivo",
+                service2_desc: "Desenvolvimento de interfaces que funcionam perfeitamente em todos os dispositivos - desktop, tablet e mobile.",
+                service3_title: "Manutenção",
+                service3_desc: "Suporte contínuo, atualizações de segurança e melhorias para manter seu website sempre funcionando perfeitamente.",
+                service4_title: "Consultoria",
+                service4_desc: "Análise de projetos existentes e consultoria técnica para otimização e modernização de sistemas web.",
+                portfolio_title: "Meus Trabalhos",
+                project1_title: "Website para Escolas",
+                project1_desc: "Plataforma educacional com recursos de gestão de alunos, professores e conteúdo didático.",
+                project2_title: "Website Corporativos", 
+                project2_desc: "Site institucional moderno com foco em conversão e experiência do utilizador otimizada.",
+                contact_title: "Vamos Trabalhar Juntos",
+                contact_heading: "Pronto para dar vida ao seu projeto?",
+                contact_desc: "Entre em contato e vamos criar algo incrível juntos!",
+                contact_phone: "Telefone",
+                contact_location: "Localização",
+                contact_email_btn: "Enviar Email",
+                contact_call_btn: "Ligar Agora",
+                footer_copyright: "© 2025 CodeCraft Studio - Gil Abreu. Todos os direitos reservados."
+            },
+            en: {
+                nav_home: "Home",
+                nav_about: "About",
+                nav_services: "Services",
+                nav_portfolio: "Portfolio", 
+                nav_contact: "Contact",
+                hero_subtitle: "Web Developer & Designer",
+                hero_description: "Creating unique digital experiences and modern websites that drive your business to the next level.",
+                hero_cta: "Let's Talk",
+                about_title: "About Me",
+                about_heading: "Web Developer",
+                about_p1: "With extensive experience in web development, I specialize in creating digital solutions that combine exceptional functionality with attractive design. My passion is transforming ideas into digital reality.",
+                about_p2: "I work with the most modern technologies and frameworks to ensure your projects are not only visually impressive, but also performant and optimized for all devices.",
+                about_p3: "Each project is an opportunity to create something unique and impactful. I always focus on user experience and technical performance.",
+                services_title: "My Services",
+                service1_title: "Web Development",
+                service1_desc: "Creation of modern, responsive and optimized websites. From design to implementation, taking care of every detail of your project.",
+                service2_title: "Responsive Design",
+                service2_desc: "Development of interfaces that work perfectly on all devices - desktop, tablet and mobile.",
+                service3_title: "Maintenance",
+                service3_desc: "Continuous support, security updates and improvements to keep your website always running perfectly.",
+                service4_title: "Consulting",
+                service4_desc: "Analysis of existing projects and technical consulting for optimization and modernization of web systems.",
+                portfolio_title: "My Work",
+                project1_title: "School Websites",
+                project1_desc: "Educational platform with student, teacher and educational content management features.",
+                project2_title: "Corporate Websites",
+                project2_desc: "Modern institutional website focused on conversion and optimized user experience.",
+                contact_title: "Let's Work Together",
+                contact_heading: "Ready to bring your project to life?",
+                contact_desc: "Get in touch and let's create something amazing together!",
+                contact_phone: "Phone",
+                contact_location: "Location",
+                contact_email_btn: "Send Email",
+                contact_call_btn: "Call Now",
+                footer_copyright: "© 2025 CodeCraft Studio - Gil Abreu. All rights reserved."
+            }
+        };
+
+        let currentLang = 'pt';
+
+        function translatePage(lang) {
+            currentLang = lang;
+            const elements = document.querySelectorAll('[data-lang-key]');
+            
+            elements.forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Atualizar botões de idioma
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Salvar preferência
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        // Event listeners para os botões de idioma
+        document.addEventListener('DOMContentLoaded', () => {
+            const languageButtons = document.querySelectorAll('.language-btn');
+            
+            languageButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const lang = btn.getAttribute('data-lang');
+                    translatePage(lang);
+                });
+            });
+
+            // Carregar idioma salvo ou detectar idioma do browser
+            const savedLang = localStorage.getItem('preferredLang');
+            const browserLang = navigator.language.slice(0, 2);
+            const defaultLang = savedLang || (browserLang === 'en' ? 'en' : 'pt');
+            
+            if (defaultLang !== 'pt') {
+                translatePage(defaultLang);
+            }
+        });
+
         // Navegação suave com efeitos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1360,27 +1523,6 @@
             }
         });
 
-        // Efeito de mouse tracking para cards
-        document.querySelectorAll('.service-card, .portfolio-item').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = (y - centerY) / 10;
-                const rotateY = (centerX - x) / 10;
-                
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = '';
-            });
-        });
-
         // Animação de loading da página
         window.addEventListener('load', () => {
             document.body.style.opacity = '0';
@@ -1415,37 +1557,6 @@
                     typeWriter(heroTitle, originalText, 80);
                 }, 2000);
             }
-        });
-
-        // Cursor personalizado (opcional)
-        const cursor = document.createElement('div');
-        cursor.className = 'custom-cursor';
-        cursor.style.cssText = `
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: difference;
-            transition: transform 0.1s ease;
-            display: none;
-        `;
-        document.body.appendChild(cursor);
-
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX - 10 + 'px';
-            cursor.style.top = e.clientY - 10 + 'px';
-            cursor.style.display = 'block';
-        });
-
-        document.addEventListener('mousedown', () => {
-            cursor.style.transform = 'scale(0.8)';
-        });
-
-        document.addEventListener('mouseup', () => {
-            cursor.style.transform = 'scale(1)';
         });
     </script>
 </body>
