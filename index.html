@@ -88,9 +88,29 @@
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 0.3rem;
+            gap: 0.5rem;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
+        }
+
+        .logo-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo:hover .logo-image {
+            transform: scale(1.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-text {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
         }
 
         .logo:hover {
@@ -586,6 +606,264 @@
             color: #667eea;
         }
 
+        /* Seção Preços */
+        .pricing {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.03) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .pricing-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .pricing-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .pricing-intro h3 {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .pricing-intro p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-column {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .pricing-column::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .pricing-column:hover::before {
+            left: 100%;
+        }
+
+        .pricing-column:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .pricing-header h4 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .market-pricing .pricing-header h4 {
+            color: #6c757d;
+        }
+
+        .codecraft-pricing .pricing-header h4 {
+            color: #667eea;
+        }
+
+        .pricing-header .subtitle {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .pricing-badge:hover::before {
+            left: 100%;
+        }
+
+        .pricing-category {
+            margin-bottom: 2rem;
+        }
+
+        .pricing-category h5 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e9ecef;
+            position: relative;
+        }
+
+        .codecraft-pricing .pricing-category h5::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .pricing-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-item:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .pricing-item-name {
+            flex: 1;
+            font-weight: 500;
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        .pricing-item-price {
+            font-weight: 700;
+            font-size: 1.1rem;
+            white-space: nowrap;
+        }
+
+        .market-pricing .pricing-item-price {
+            color: #dc3545;
+        }
+
+        .codecraft-pricing .pricing-item-price {
+            color: #667eea;
+        }
+
+        .pricing-savings {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-savings::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .pricing-savings:hover::before {
+            transform: translateX(100%);
+        }
+
+        .pricing-savings h6 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .pricing-savings p {
+            margin: 0;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Responsividade para preços */
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .pricing-column {
+                padding: 2rem 1.5rem;
+            }
+
+            .pricing-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .pricing-item-price {
+                align-self: flex-end;
+            }
+        }
+
         /* Seção Portfolio */
         .portfolio-grid {
             display: grid;
@@ -889,11 +1167,72 @@
             background: #333;
             color: white;
             text-align: center;
-            padding: 2rem;
+            padding: 3rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .footer-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .footer-logo-image {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .footer-logo:hover .footer-logo-image {
+            transform: scale(1.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer-logo-text {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .footer-logo-brand {
+            color: white;
+            font-weight: 800;
+        }
+
+        .footer-logo-studio {
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .footer-description {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
         }
 
         .social-links {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .social-links a {
@@ -915,6 +1254,31 @@
 
             .language-selector {
                 margin-left: 0;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+                gap: 0.4rem;
+            }
+
+            .logo-image {
+                width: 32px;
+                height: 32px;
+            }
+
+            .footer-logo {
+                font-size: 1.3rem;
+                gap: 0.4rem;
+            }
+
+            .footer-logo-image {
+                width: 28px;
+                height: 28px;
+            }
+
+            .footer-description {
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
             }
 
             .hero-brand {
@@ -1078,8 +1442,11 @@
     <header>
         <nav>
             <div class="logo">
-                <span class="logo-brand">CodeCraft</span>
-                <span class="logo-studio">Studio</span>
+                <img src="logotipo.jpeg" alt="CodeCraft Studio Logo" class="logo-image">
+                <div class="logo-text">
+                    <span class="logo-brand">CodeCraft</span>
+                    <span class="logo-studio">Studio</span>
+                </div>
             </div>
             <ul class="nav-links">
                 <li><a href="#home" data-lang-key="nav_home">Início</a></li>
@@ -1260,13 +1627,25 @@
 
     <!-- Footer -->
     <footer>
-        <!-- <div class="social-links">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-        </div> -->
-        <p data-lang-key="footer_copyright">&copy; 2025 CodeCraft Studio - Gil Abreu. Todos os direitos reservados.</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logotipo.jpeg" alt="CodeCraft Studio Logo" class="footer-logo-image">
+                <div class="footer-logo-text">
+                    <span class="footer-logo-brand">CodeCraft</span>
+                    <span class="footer-logo-studio">Studio</span>
+                </div>
+            </div>
+            <p class="footer-description" data-lang-key="footer_description">
+                Criando experiências digitais únicas com paixão e dedicação. Seu parceiro confiável para projetos web modernos e inovadores.
+            </p>
+            <!-- <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div> -->
+            <p data-lang-key="footer_copyright">&copy; 2025 CodeCraft Studio - Gil Abreu. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
     <script>
@@ -1307,6 +1686,7 @@
                 contact_location: "Localização",
                 contact_email_btn: "Enviar Email",
                 contact_call_btn: "Ligar Agora",
+                footer_description: "Criando experiências digitais únicas com paixão e dedicação. Seu parceiro confiável para projetos web modernos e inovadores.",
                 footer_copyright: "© 2025 CodeCraft Studio - Gil Abreu. Todos os direitos reservados."
             },
             en: {
@@ -1344,6 +1724,7 @@
                 contact_location: "Location",
                 contact_email_btn: "Send Email",
                 contact_call_btn: "Call Now",
+                footer_description: "Creating unique digital experiences with passion and dedication. Your reliable partner for modern and innovative web projects.",
                 footer_copyright: "© 2025 CodeCraft Studio - Gil Abreu. All rights reserved."
             }
         };
