@@ -9,23 +9,15 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>CodeCraft Studio - Gil Abreu | Desenvolvimento Web Profissional</title>
     <!-- Manifest do PWA (SUBSTITUA ou ADICIONE esta linha) -->
+<!-- PWA Manifest -->
 <link rel="manifest" href="/manifest.json">
 
-<!-- Ícones para iOS (já tem, mas confirme) -->
-<link rel="apple-touch-icon" href="/icon-192x192.png">
-<link rel="apple-touch-startup-image" href="/icon-512x512.png">
+<!-- Ícones para diferentes plataformas -->
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/icon-512x512.png">
 
-<!-- Para Windows -->
-<meta name="msapplication-TileColor" content="#0a0a1a">
-<meta name="msapplication-TileImage" content="/icon-144x144.png">
-
-<!-- Para Android Chrome -->
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="application-name" content="CodeCraft Studio">
-
-<!-- Cor do tema para diferentes navegadores -->
-<meta name="theme-color" content="#0a0a1a" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<!-- Safari pinned tab -->
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0a0a1a">
     <meta name="description" content="CodeCraft Studio - Desenvolvedor Web especializado em criação de websites modernos e responsivos. Ofereço soluções completas para sua presença digital.">
     
     <!-- Font Awesome para ícones -->
@@ -2288,44 +2280,67 @@
 
     <script>
 
-// Registro do Service Worker
+// ===== PWA CONFIGURATION =====
+// Registrar Service Worker
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
+  window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js')
-      .then(function(registration) {
-        console.log('Service Worker registrado com sucesso: ', registration.scope);
+      .then(registration => {
+        console.log('✅ Service Worker registrado:', registration.scope);
         
-        // Verificar se há uma nova versão
+        // Verificar atualizações
         registration.addEventListener('updatefound', () => {
           const newWorker = registration.installing;
-          console.log('Nova versão do Service Worker encontrada!');
+          console.log('🔄 Nova versão do Service Worker encontrada!');
           
           newWorker.addEventListener('statechange', () => {
             if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-              // Nova versão disponível!
-              console.log('Nova versão pronta para instalar!');
+              console.log('✨ Nova versão pronta! Recarregue para atualizar.');
             }
           });
         });
       })
-      .catch(function(error) {
-        console.log('Falha no registro do Service Worker: ', error);
+      .catch(error => {
+        console.log('❌ Falha no Service Worker:', error);
       });
   });
 }
 
-// Detectar se está em modo PWA
-function isRunningStandalone() {
-  return (window.matchMedia('(display-mode: standalone)').matches) || 
-         (window.navigator.standalone) || 
-         (document.referrer.includes('android-app://'));
+// Detectar modo standalone (PWA instalado)
+function detectPWA() {
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || 
+                      window.navigator.standalone ||
+                      document.referrer.includes('android-app://');
+  
+  if (isStandalone) {
+    document.documentElement.classList.add('pwa-installed');
+    console.log('📱 Rodando como PWA instalado');
+  }
+  return isStandalone;
 }
 
-// Ajustes para PWA instalado
-if (isRunningStandalone()) {
-  console.log('Aplicação rodando como PWA instalado');
-  document.body.classList.add('pwa-mode');
-}
+// Verificar ao carregar
+document.addEventListener('DOMContentLoaded', detectPWA);
+
+// Oferecer instalação (para Chrome)
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  
+  // Mostrar botão de instalação (opcional)
+  setTimeout(() => {
+    if (deferredPrompt && confirm('Deseja instalar o CodeCraft Studio como app?')) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('Usuário aceitou instalação');
+        }
+        deferredPrompt = null;
+      });
+    }
+  }, 3000);
+});
         
         // Sistema de Tradução
         const translations = {
