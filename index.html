@@ -414,6 +414,41 @@
             border-color: rgba(255, 255, 255, 0.4);
             transform: translateY(-3px);
         }
+        /* ===== Language Switcher ===== */
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+        }
+        
+        .lang-btn {
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+        
+        .lang-btn:hover, .lang-btn.active {
+            color: white;
+        }
+        
+        .lang-divider {
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+        
+        @media (max-width: 768px) {
+            .lang-switch {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        }
+
         /* ===== Hero Section ===== */
         
         .hero {
@@ -1495,11 +1530,16 @@
 
             <!-- Desktop Nav -->
             <ul class="nav-links">
-                <li><a href="#inicio" class="nav-item">Início</a></li>
-                <li><a href="#sobre" class="nav-item">Sobre</a></li>
-                <li><a href="#servicos" class="nav-item">Serviços</a></li>
-                <li><a href="#portfolio" class="nav-item">Portefólio</a></li>
-                <li><a href="#contacto" class="cta-nav">Discutir Projeto</a></li>
+                <li><a href="#inicio" class="nav-item" data-lang-key="nav_inicio">Início</a></li>
+                <li><a href="#sobre" class="nav-item" data-lang-key="nav_sobre">Sobre</a></li>
+                <li><a href="#servicos" class="nav-item" data-lang-key="nav_servicos">Serviços</a></li>
+                <li><a href="#portfolio" class="nav-item" data-lang-key="nav_portfolio">Portefólio</a></li>
+                <li><a href="#contacto" class="cta-nav" data-lang-key="nav_cta">Discutir Projeto</a></li>
+                <li class="lang-switch">
+                    <span class="lang-btn active" data-lang="pt">PT</span>
+                    <span class="lang-divider">|</span>
+                    <span class="lang-btn" data-lang="en">EN</span>
+                </li>
             </ul>
 
             <!-- Mobile Toggle -->
@@ -1515,11 +1555,16 @@
             <i class="fas fa-times"></i>
         </button>
         <ul class="nav-links-mobile">
-            <li><a href="#inicio" class="nav-item" data-close>Início</a></li>
-            <li><a href="#sobre" class="nav-item" data-close>Sobre</a></li>
-            <li><a href="#servicos" class="nav-item" data-close>Serviços</a></li>
-            <li><a href="#portfolio" class="nav-item" data-close>Portefólio</a></li>
-            <li><a href="#contacto" class="cta-nav-mobile" data-close>Discutir Projeto</a></li>
+            <li><a href="#inicio" class="nav-item" data-close data-lang-key="nav_inicio">Início</a></li>
+            <li><a href="#sobre" class="nav-item" data-close data-lang-key="nav_sobre">Sobre</a></li>
+            <li><a href="#servicos" class="nav-item" data-close data-lang-key="nav_servicos">Serviços</a></li>
+            <li><a href="#portfolio" class="nav-item" data-close data-lang-key="nav_portfolio">Portefólio</a></li>
+            <li><a href="#contacto" class="cta-nav-mobile" data-close data-lang-key="nav_cta">Discutir Projeto</a></li>
+            <li class="lang-switch">
+                <span class="lang-btn active" data-lang="pt">PT</span>
+                <span class="lang-divider">|</span>
+                <span class="lang-btn" data-lang="en">EN</span>
+            </li>
         </ul>
     </div>
 
@@ -1529,23 +1574,23 @@
         <div class="particles-container" id="particles"></div>
 
         <div class="container hero-content">
-            <div class="hero-badge reveal-fade-up">✦ Agência Digital em Portugal</div>
-            <h1 class="reveal-fade-up delay-1">
+            <div class="hero-badge reveal-fade-up" data-lang-key="hero_badge">✦ Agência Digital em Portugal</div>
+            <h1 class="reveal-fade-up delay-1" data-lang-key="hero_title">
                 <span class="text-gradient">Websites</span> que<br>
                 <span class="highlight">convertem</span> e<br>
                 <span class="text-gradient">redes sociais</span> que <span class="highlight">vendem</span>
             </h1>
-            <p class="reveal-fade-up delay-2">
+            <p class="reveal-fade-up delay-2" data-lang-key="hero_desc">
                 <strong>CodeCraft Studio</strong> — especialistas em <strong>desenvolvimento de websites</strong> e
-                <strong>gestão de redes sociais</strong> em <strong>Portugal</strong>. Criamos experiências digitais de alto impacto que transformam visitantes em clientes.
+                <strong>gestão de redes sociais</strong> em <strong>Portugal</strong>. <strong>Somos bastante flexíveis e adaptamo-nos ao seu orçamento</strong> para criar experiências digitais de alto impacto.
             </p>
             <div class="hero-ctas reveal-fade-up delay-3">
-                <a href="#contacto" class="btn btn-primary">Vamos criar juntos <i class="fas fa-arrow-right"></i></a>
-                <a href="#portfolio" class="btn btn-secondary">Ver projetos</a>
+                <a href="#contacto" class="btn btn-primary" data-lang-key="hero_cta1">Vamos criar juntos <i class="fas fa-arrow-right"></i></a>
+                <a href="#portfolio" class="btn btn-secondary" data-lang-key="hero_cta2">Ver projetos</a>
             </div>
         </div>
         <div class="scroll-indicator">
-            <span>Scroll</span>
+            <span data-lang-key="scroll_text">Scroll</span>
             <div class="line"></div>
         </div>
     </section>
@@ -1553,7 +1598,7 @@
     <!-- ===== Social Proof ===== -->
     <div class="social-proof reveal-fade-up">
         <div class="container">
-            <p>Marcas que confiam no nosso trabalho</p>
+            <p data-lang-key="social_proof">Marcas que confiam no nosso trabalho</p>
             <div class="logo-ticker">
                 <span>AsOne</span>
                 <span>PatinsEmJogo</span>
@@ -1573,34 +1618,33 @@
                     <img src="logo2.png" alt="CodeCraft Studio - Agência Digital em Portugal">
                 </div>
                 <div class="about-content">
-                    <h4 class="text-gradient-accent" style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.5rem;">
+                    <h4 class="text-gradient-accent" style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.5rem;" data-lang-key="about_badge">
                         Quem somos
                     </h4>
-                    <h2 class="reveal-fade-right delay-1">Mais do que código, <span class="text-gradient">criamos</span> negócios</h2>
-                    <p class="reveal-fade-right delay-2">
-                        Somos uma agência digital focada em resultados. Atuando em todo <strong>Portugal</strong>, ajudamos marcas a construir uma presença digital forte, com websites de alta performance e estratégias
-                        sociais que geram <strong>vendas reais</strong>.
+                    <h2 class="reveal-fade-right delay-1" data-lang-key="about_title">Mais do que código, <span class="text-gradient">criamos</span> negócios</h2>
+                    <p class="reveal-fade-right delay-2" data-lang-key="about_desc">
+                        Somos uma agência digital focada em resultados e <strong>totalmente flexível</strong>. Atuando em todo <strong>Portugal</strong>, trabalhamos lado a lado com o seu <strong>orçamento</strong> para ajudar a sua marca a construir uma presença digital forte, gerando <strong>vendas reais</strong>.
                     </p>
                     <div class="about-features">
                         <div class="feature-item reveal-fade-up delay-1">
                             <div class="feature-icon"><i class="fas fa-code"></i></div>
                             <div>
-                                <h4>Desenvolvimento Web</h4>
-                                <p>Sites rápidos, seguros e escaláveis, construídos com as melhores tecnologias.</p>
+                                <h4 data-lang-key="feat1_title">Desenvolvimento Web</h4>
+                                <p data-lang-key="feat1_desc">Sites rápidos, seguros e escaláveis, construídos com as melhores tecnologias.</p>
                             </div>
                         </div>
                         <div class="feature-item reveal-fade-up delay-2">
                             <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
                             <div>
-                                <h4>Estratégia Social</h4>
-                                <p>Gestão de redes sociais com foco em engajamento, conversão e crescimento real.</p>
+                                <h4 data-lang-key="feat2_title">Estratégia Social</h4>
+                                <p data-lang-key="feat2_desc">Gestão de redes sociais com foco em engajamento, conversão e crescimento real.</p>
                             </div>
                         </div>
                         <div class="feature-item reveal-fade-up delay-3">
                             <div class="feature-icon"><i class="fas fa-bullseye"></i></div>
                             <div>
-                                <h4>Resultados Mensuráveis</h4>
-                                <p>Não trabalhamos com achismos. Dados, métricas e ROI no centro da nossa estratégia.</p>
+                                <h4 data-lang-key="feat3_title">Resultados Mensuráveis</h4>
+                                <p data-lang-key="feat3_desc">Não trabalhamos com achismos. Dados, métricas e ROI no centro da nossa estratégia.</p>
                             </div>
                         </div>
                     </div>
@@ -1613,34 +1657,34 @@
     <section id="servicos" class="services-section">
         <div class="container">
             <div class="services-header reveal-fade-up">
-                <h4 class="text-gradient-accent">O que fazemos</h4>
-                <h2>Serviços digitais com <span class="text-gradient">impacto</span></h2>
+                <h4 class="text-gradient-accent" data-lang-key="serv_badge">O que fazemos</h4>
+                <h2 data-lang-key="serv_title">Serviços digitais com <span class="text-gradient">impacto</span></h2>
             </div>
 
             <div class="services-grid">
                 <div class="service-card reveal-fade-up delay-1">
                     <i class="fas fa-laptop-code service-icon-l"></i>
-                    <h3>Desenvolvimento de Websites</h3>
-                    <p>Criação de sites institucionais, e-commerces e plataformas personalizadas, com foco em performance e conversão.</p>
-                    <span class="learn-more">Saber mais <i class="fas fa-arrow-right"></i></span>
+                    <h3 data-lang-key="serv1_title">Desenvolvimento de Websites</h3>
+                    <p data-lang-key="serv1_desc">Criação de sites institucionais, e-commerces e plataformas personalizadas, com foco em performance e conversão.</p>
+                    <span class="learn-more" data-lang-key="learn_more">Saber mais <i class="fas fa-arrow-right"></i></span>
                 </div>
                 <div class="service-card reveal-fade-up delay-2">
                     <i class="fas fa-hashtag service-icon-l"></i>
-                    <h3>Gestão de Redes Sociais</h3>
-                    <p>Estratégia, conteúdo e gestão de comunidades para marcas que querem crescer no digital.</p>
-                    <span class="learn-more">Saber mais <i class="fas fa-arrow-right"></i></span>
+                    <h3 data-lang-key="serv2_title">Gestão de Redes Sociais</h3>
+                    <p data-lang-key="serv2_desc">Estratégia, conteúdo e gestão de comunidades para marcas que querem crescer no digital.</p>
+                    <span class="learn-more" data-lang-key="learn_more">Saber mais <i class="fas fa-arrow-right"></i></span>
                 </div>
                 <div class="service-card reveal-fade-up delay-3">
                     <i class="fas fa-paint-brush service-icon-l"></i>
-                    <h3>UI/UX Design</h3>
-                    <p>Interfaces intuitivas e visualmente impactantes, desenhadas para proporcionar a melhor experiência ao utilizador.</p>
-                    <span class="learn-more">Saber mais <i class="fas fa-arrow-right"></i></span>
+                    <h3 data-lang-key="serv3_title">UI/UX Design</h3>
+                    <p data-lang-key="serv3_desc">Interfaces intuitivas e visualmente impactantes, desenhadas para proporcionar a melhor experiência ao utilizador.</p>
+                    <span class="learn-more" data-lang-key="learn_more">Saber mais <i class="fas fa-arrow-right"></i></span>
                 </div>
                 <div class="service-card reveal-fade-up delay-4">
                     <i class="fas fa-rocket service-icon-l"></i>
-                    <h3>SEO & Performance</h3>
-                    <p>Otimização para motores de busca e velocidade de carregamento, para que o seu site seja encontrado e amado.</p>
-                    <span class="learn-more">Saber mais <i class="fas fa-arrow-right"></i></span>
+                    <h3 data-lang-key="serv4_title">SEO & Performance</h3>
+                    <p data-lang-key="serv4_desc">Otimização para motores de busca e velocidade de carregamento, para que o seu site seja encontrado e amado.</p>
+                    <span class="learn-more" data-lang-key="learn_more">Saber mais <i class="fas fa-arrow-right"></i></span>
                 </div>
             </div>
         </div>
@@ -1650,8 +1694,8 @@
     <section id="portfolio" class="portfolio-section">
         <div class="container">
             <div class="services-header reveal-fade-up">
-                <h4 class="text-gradient-accent">Projetos</h4>
-                <h2>Trabalhos que <span class="text-gradient">falam</span> por si</h2>
+                <h4 class="text-gradient-accent" data-lang-key="port_badge">Projetos</h4>
+                <h2 data-lang-key="port_title">Trabalhos que <span class="text-gradient">falam</span> por si</h2>
             </div>
 
             <div class="portfolio-grid">
@@ -1665,7 +1709,7 @@
                             <span class="port-tag">Ginásios</span>
                         </div>
                         <h3>AsOne</h3>
-                        <p>Plataforma completa para gestão de ginásios e utilizadores.</p>
+                        <p data-lang-key="port1_desc">Plataforma completa para gestão de ginásios e utilizadores.</p>
                     </div>
                 </a>
 
@@ -1679,7 +1723,7 @@
                             <span class="port-tag">Desporto</span>
                         </div>
                         <h3>PatinsEmJogo</h3>
-                        <p>Dashboard para gestão de modalidades desportivas.</p>
+                        <p data-lang-key="port2_desc">Dashboard para gestão de modalidades desportivas.</p>
                     </div>
                 </a>
 
@@ -1693,7 +1737,7 @@
                             <span class="port-tag">Arquitetura</span>
                         </div>
                         <h3>BDN</h3>
-                        <p>Website corporativo bilingue focado em portefólio.</p>
+                        <p data-lang-key="port3_desc">Website corporativo bilingue focado em portefólio.</p>
                     </div>
                 </a>
 
@@ -1707,7 +1751,7 @@
                             <span class="port-tag">Educação</span>
                         </div>
                         <h3>CEMA</h3>
-                        <p>Presença digital para centro de ensino profissional.</p>
+                        <p data-lang-key="port4_desc">Presença digital para centro de ensino profissional.</p>
                     </div>
                 </a>
 
@@ -1721,7 +1765,7 @@
                             <span class="port-tag">Hóquei</span>
                         </div>
                         <h3>HoqueiFantasy</h3>
-                        <p>Plataforma de fantasy sports para hóquei em patins.</p>
+                        <p data-lang-key="port5_desc">Plataforma de fantasy sports para hóquei em patins.</p>
                     </div>
                 </a>
 
@@ -1735,7 +1779,7 @@
                             <span class="port-tag">UK</span>
                         </div>
                         <h3>Acess Sheffield</h3>
-                        <p>Website institucional focado em acessibilidade e inclusão.</p>
+                        <p data-lang-key="port6_desc">Website institucional focado em acessibilidade e inclusão.</p>
                     </div>
                 </a>
 
@@ -1749,21 +1793,21 @@
                             <span class="port-tag">Pessoal</span>
                         </div>
                         <h3>Rafael Fazenda</h3>
-                        <p>Website portfólio pessoal e profissional.</p>
+                        <p data-lang-key="port7_desc">Website portfólio pessoal e profissional.</p>
                     </div>
                 </a>
 
-                <a href="https://raquelfazenda.me" target="_blank" class="portfolio-item">
-                    <div class="portfolio-visual ptf-7">
+                <a href="#" class="portfolio-item">
+                    <div class="portfolio-visual ptf-8">
                         <img src="raquel.png" alt="Raquel Fazenda">
                     </div>
                     <div class="portfolio-info">
                         <div class="portfolio-tags">
                             <span class="port-tag">Portfólio</span>
-                            <span class="port-tag">Pessoal</span>
+                            <span class="port-tag">Desporto</span>
                         </div>
                         <h3>Raquel Fazenda</h3>
-                        <p>Website portfólio pessoal e profissional.</p>
+                        <p data-lang-key="port8_desc">Website portfólio pessoal e desportivo.</p>
                     </div>
                 </a>
             </div>
@@ -1776,13 +1820,13 @@
             <div class="cta-inner reveal-zoom">
                 <div class="cta-bg"></div>
                 <div class="cta-content">
-                    <h4 class="text-gradient-accent" style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.8rem;">
+                    <h4 class="text-gradient-accent" style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.8rem;" data-lang-key="cta_badge">
                         Vamos criar algo incrível
                     </h4>
-                    <h2>Pronto para <span class="text-gradient">elevar</span> o seu negócio?</h2>
-                    <p>
-                        Deixe os projetos amadores para trás. Trabalhe com quem realmente entende de
-                        <strong>websites</strong> e <strong>redes sociais</strong> em <strong>Portugal</strong>.
+                    <h2 data-lang-key="cta_title">Soluções para o seu <span class="text-gradient">orçamento</span></h2>
+                    <p data-lang-key="cta_desc">
+                        Trabalhe com quem realmente entende de
+                        <strong>websites</strong> e <strong>redes sociais</strong> em <strong>Portugal</strong>. Somos bastante flexíveis e adaptamo-nos perfeitamente à sua realidade!
                     </p>
                     <div class="cta-buttons">
                         <a href="mailto:geral@codecraftstudio.pt" class="btn btn-primary">
@@ -1806,21 +1850,21 @@
                         <img src="logo2.png" alt="CodeCraft Studio">
                         <span>CodeCraft <span style="font-weight:400; font-style:italic; color:var(--accent-2)">Studio</span></span>
                     </div>
-                    <p>Agência digital especialista em desenvolvimento de websites e gestão de redes sociais. A partir de Portugal (Esposende), para o mundo.</p>
+                    <p data-lang-key="footer_desc">Agência digital especialista em desenvolvimento de websites e gestão de redes sociais. A partir de Portugal (Esposende), para o mundo.</p>
                 </div>
 
                 <div class="footer-nav">
-                    <h4 class="footer-heading">Navegação</h4>
+                    <h4 class="footer-heading" data-lang-key="footer_nav">Navegação</h4>
                     <div class="footer-links">
-                        <a href="#inicio">Início</a>
-                        <a href="#sobre">Sobre</a>
-                        <a href="#servicos">Serviços</a>
-                        <a href="#portfolio">Projetos</a>
+                        <a href="#inicio" data-lang-key="nav_inicio">Início</a>
+                        <a href="#sobre" data-lang-key="nav_sobre">Sobre</a>
+                        <a href="#servicos" data-lang-key="nav_servicos">Serviços</a>
+                        <a href="#portfolio" data-lang-key="nav_portfolio">Projetos</a>
                     </div>
                 </div>
 
                 <div class="footer-contact">
-                    <h4 class="footer-heading">Contacto</h4>
+                    <h4 class="footer-heading" data-lang-key="footer_contact">Contacto</h4>
                     <div class="footer-links">
                         <a href="mailto:geral@codecraftstudio.pt">geral@codecraftstudio.pt</a>
                         <a href="tel:+351926696208">+351 926 696 208</a>
@@ -1830,7 +1874,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 CodeCraft Studio. Todos os direitos reservados.</p>
+                <p data-lang-key="footer_rights">&copy; 2026 CodeCraft Studio. Todos os direitos reservados.</p>
                 <div class="footer-socials">
                     <a href="https://instagram.com/code_craft_studio" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="https://tiktok.com/@code_craft_studio" target="_blank"><i class="fab fa-tiktok"></i></a>
@@ -2016,6 +2060,148 @@
 
         console.log('🚀 CodeCraft Studio - Agência Digital');
         console.log('💡 Imagem "Quem somos" no tamanho original com border radius.');
+        // =============================================
+        // 8. LANGUAGE TRANSLATION
+        // =============================================
+        const translations = {
+            pt: {
+                nav_inicio: "Início",
+                nav_sobre: "Sobre",
+                nav_servicos: "Serviços",
+                nav_portfolio: "Portefólio",
+                nav_cta: "Discutir Projeto",
+                hero_badge: "✦ Agência Digital em Portugal",
+                hero_title: '<span class="text-gradient">Websites</span> que<br><span class="highlight">convertem</span> e<br><span class="text-gradient">redes sociais</span> que <span class="highlight">vendem</span>',
+                hero_desc: '<strong>CodeCraft Studio</strong> — especialistas em <strong>desenvolvimento de websites</strong> e <strong>gestão de redes sociais</strong> em <strong>Portugal</strong>. <strong>Somos bastante flexíveis e adaptamo-nos ao seu orçamento</strong> para criar experiências digitais de alto impacto.',
+                hero_cta1: 'Vamos criar juntos <i class="fas fa-arrow-right"></i>',
+                hero_cta2: 'Ver projetos',
+                scroll_text: 'Scroll',
+                social_proof: 'Marcas que confiam no nosso trabalho',
+                about_badge: 'Quem somos',
+                about_title: 'Mais do que código, <span class="text-gradient">criamos</span> negócios',
+                about_desc: 'Somos uma agência digital focada em resultados e <strong>totalmente flexível</strong>. Atuando em todo <strong>Portugal</strong>, trabalhamos lado a lado com o seu <strong>orçamento</strong> para ajudar a sua marca a construir uma presença digital forte, gerando <strong>vendas reais</strong>.',
+                feat1_title: 'Desenvolvimento Web',
+                feat1_desc: 'Sites rápidos, seguros e escaláveis, construídos com as melhores tecnologias.',
+                feat2_title: 'Estratégia Social',
+                feat2_desc: 'Gestão de redes sociais com foco em engajamento, conversão e crescimento real.',
+                feat3_title: 'Resultados Mensuráveis',
+                feat3_desc: 'Não trabalhamos com achismos. Dados, métricas e ROI no centro da nossa estratégia.',
+                serv_badge: 'O que fazemos',
+                serv_title: 'Serviços digitais com <span class="text-gradient">impacto</span>',
+                serv1_title: 'Desenvolvimento de Websites',
+                serv1_desc: 'Criação de sites institucionais, e-commerces e plataformas personalizadas, com foco em performance e conversão.',
+                serv2_title: 'Gestão de Redes Sociais',
+                serv2_desc: 'Estratégia, conteúdo e gestão de comunidades para marcas que querem crescer no digital.',
+                serv3_title: 'UI/UX Design',
+                serv3_desc: 'Interfaces intuitivas e visualmente impactantes, desenhadas para proporcionar a melhor experiência ao utilizador.',
+                serv4_title: 'SEO & Performance',
+                serv4_desc: 'Otimização para motores de busca e velocidade de carregamento, para que o seu site seja encontrado e amado.',
+                learn_more: 'Saber mais <i class="fas fa-arrow-right"></i>',
+                port_badge: 'Projetos',
+                port_title: 'Trabalhos que <span class="text-gradient">falam</span> por si',
+                port1_desc: 'Plataforma completa para gestão de ginásios e utilizadores.',
+                port2_desc: 'Dashboard para gestão de modalidades desportivas.',
+                port3_desc: 'Website corporativo bilingue focado em portefólio.',
+                port4_desc: 'Presença digital para centro de ensino profissional.',
+                port5_desc: 'Plataforma de fantasy sports para hóquei em patins.',
+                port6_desc: 'Website institucional focado em acessibilidade e inclusão.',
+                port7_desc: 'Website portfólio pessoal e profissional.',
+                port8_desc: 'Website portfólio pessoal e desportivo.',
+                cta_badge: 'Vamos criar algo incrível',
+                cta_title: 'Soluções para o seu <span class="text-gradient">orçamento</span>',
+                cta_desc: 'Temos a solução ideal para a sua realidade. Fale-nos do seu projeto e do seu <strong>orçamento</strong> através do e-mail ou telefone, <strong>somos bastante flexíveis!</strong>',
+                footer_desc: 'Agência digital especialista em desenvolvimento de websites e gestão de redes sociais. A partir de Portugal (Esposende), para o mundo.',
+                footer_nav: 'Navegação',
+                footer_contact: 'Contacto',
+                footer_rights: '&copy; 2026 CodeCraft Studio. Todos os direitos reservados.'
+            },
+            en: {
+                nav_inicio: "Home",
+                nav_sobre: "About",
+                nav_servicos: "Services",
+                nav_portfolio: "Portfolio",
+                nav_cta: "Discuss Project",
+                hero_badge: "✦ Digital Agency in Portugal",
+                hero_title: '<span class="text-gradient">Websites</span> that<br><span class="highlight">convert</span> and<br><span class="text-gradient">social media</span> that <span class="highlight">sells</span>',
+                hero_desc: '<strong>CodeCraft Studio</strong> — specialists in <strong>website development</strong> and <strong>social media management</strong> in <strong>Portugal</strong>. <strong>We are highly flexible and adapt to your budget</strong> to create high-impact digital experiences.',
+                hero_cta1: 'Let\'s create together <i class="fas fa-arrow-right"></i>',
+                hero_cta2: 'View projects',
+                scroll_text: 'Scroll',
+                social_proof: 'Brands that trust our work',
+                about_badge: 'About us',
+                about_title: 'More than code, we <span class="text-gradient">create</span> businesses',
+                about_desc: 'We are a digital agency focused on results and <strong>fully flexible</strong>. Operating across <strong>Portugal</strong>, we work hand in hand with your <strong>budget</strong> to help your brand build a strong digital presence, generating <strong>real sales</strong>.',
+                feat1_title: 'Web Development',
+                feat1_desc: 'Fast, secure and scalable websites, built with the best technologies.',
+                feat2_title: 'Social Strategy',
+                feat2_desc: 'Social media management focused on engagement, conversion and real growth.',
+                feat3_title: 'Measurable Results',
+                feat3_desc: 'We don\'t do guesswork. Data, metrics and ROI are at the core of our strategy.',
+                serv_badge: 'What we do',
+                serv_title: 'Digital services with <span class="text-gradient">impact</span>',
+                serv1_title: 'Website Development',
+                serv1_desc: 'Creation of institutional websites, e-commerce and bespoke platforms, focused on performance and conversion.',
+                serv2_title: 'Social Media Management',
+                serv2_desc: 'Strategy, content and community management for brands looking to grow digitally.',
+                serv3_title: 'UI/UX Design',
+                serv3_desc: 'Intuitive and visually striking interfaces, designed to provide the best user experience.',
+                serv4_title: 'SEO & Performance',
+                serv4_desc: 'Search engine optimisation and fast loading speeds, so your website is found and loved.',
+                learn_more: 'Learn more <i class="fas fa-arrow-right"></i>',
+                port_badge: 'Projects',
+                port_title: 'Work that <span class="text-gradient">speaks</span> for itself',
+                port1_desc: 'Complete platform for gym and user management.',
+                port2_desc: 'Dashboard for sports modalities management.',
+                port3_desc: 'Bilingual corporate website focused on portfolio.',
+                port4_desc: 'Digital presence for a vocational training centre.',
+                port5_desc: 'Fantasy sports platform for roller hockey.',
+                port6_desc: 'Institutional website focused on accessibility and inclusion.',
+                port7_desc: 'Personal and professional portfolio website.',
+                port8_desc: 'Personal and sports portfolio website.',
+                cta_badge: 'Let\'s create something amazing',
+                cta_title: 'Solutions for your <span class="text-gradient">budget</span>',
+                cta_desc: 'We have the ideal solution for your reality. Tell us about your project and your <strong>budget</strong> via email or phone, <strong>we are highly flexible!</strong>',
+                footer_desc: 'Digital agency specialising in website development and social media management. From Portugal (Esposende) to the world.',
+                footer_nav: 'Navigation',
+                footer_contact: 'Contact',
+                footer_rights: '&copy; 2026 CodeCraft Studio. All rights reserved.'
+            }
+        };
+
+        const langBtns = document.querySelectorAll('.lang-btn');
+        let currentLang = localStorage.getItem('language') || 'pt';
+
+        function updateLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            
+            // Update active button state
+            langBtns.forEach(btn => {
+                if (btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Update texts
+            document.querySelectorAll('[data-lang-key]').forEach(el => {
+                const key = el.getAttribute('data-lang-key');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+        }
+
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                updateLanguage(btn.dataset.lang);
+            });
+        });
+
+        // Initialize language
+        updateLanguage(currentLang);
     </script>
 
 </body>
