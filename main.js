@@ -7,8 +7,15 @@
   const consentKey = 'cc_cookie_notice_v1';
   document.querySelector('[data-year]').textContent = new Date().getFullYear();
   window.addEventListener('scroll', () => header.classList.toggle('is-scrolled', window.scrollY > 12), { passive: true });
-  menuButton?.addEventListener('click', () => { const open = menu.classList.toggle('is-open'); menuButton.setAttribute('aria-expanded', String(open)); });
-  menu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { menu.classList.remove('is-open'); menuButton?.setAttribute('aria-expanded', 'false'); }));
+  const setMenu = open => {
+    menu?.classList.toggle('is-open', open);
+    document.body.classList.toggle('menu-open', open);
+    menuButton?.setAttribute('aria-expanded', String(open));
+    if (menuButton) menuButton.innerHTML = `${open ? 'Fechar' : 'Menu'} <span></span>`;
+  };
+  menuButton?.addEventListener('click', () => setMenu(!menu.classList.contains('is-open')));
+  menu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+  window.addEventListener('keydown', event => { if (event.key === 'Escape') setMenu(false); });
   const saveConsent = () => {
     banner.hidden = true;
     try { localStorage.setItem(consentKey, 'necessary'); } catch (_) { /* Private browsers may block local storage. */ }
