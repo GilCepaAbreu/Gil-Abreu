@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Símbolo CodeCraft Studio</title><desc id="desc">Marca isolada CodeCraft Studio</desc>
+  <rect x="58" y="58" width="908" height="908" rx="176" fill="#071522"/>
+  <rect x="82" y="82" width="860" height="860" rx="152" fill="none" stroke="#27DBE8" stroke-width="10"/>
+  <path d="M365 315 203 512l162 197" fill="none" stroke="#27DBE8" stroke-width="78" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m659 315 162 197-162 197" fill="none" stroke="#5DEA9B" stroke-width="78" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m595 272-166 480" fill="none" stroke="#EAF7F7" stroke-width="65" stroke-linecap="round"/>
+  <circle cx="512" cy="792" r="31" fill="#5DEA9B"/><path d="M263 792h165M596 792h165" fill="none" stroke="#27DBE8" stroke-width="26" stroke-linecap="round"/>
+</svg>

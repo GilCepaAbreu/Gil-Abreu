@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="520" viewBox="0 0 1600 520" role="img" aria-labelledby="title desc">
+  <title id="title">CodeCraft Studio</title><desc id="desc">Logótipo principal da CodeCraft Studio</desc>
+  <g transform="translate(56 62)"><rect width="396" height="396" rx="64" fill="#071522"/>
+    <path d="M143 119 78 198l65 79" fill="none" stroke="#27DBE8" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="m253 119 65 79-65 79" fill="none" stroke="#5DEA9B" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="m228 101-62 195" fill="none" stroke="#EAF7F7" stroke-width="28" stroke-linecap="round"/>
+    <circle cx="198" cy="330" r="12" fill="#5DEA9B"/><path d="M94 330h72M230 330h72" stroke="#27DBE8" stroke-width="8" stroke-linecap="round" opacity=".8"/>
+  </g>
+  <g fill="#071522" font-family="Arial, Helvetica, sans-serif"><text x="510" y="250" font-size="154" font-weight="800" letter-spacing="-10">CodeCraft</text><text x="520" y="348" font-size="57" font-weight="700" letter-spacing="22" fill="#187D92">STUDIO</text><rect x="520" y="386" width="885" height="5" rx="2.5" fill="#27DBE8"/><text x="520" y="440" font-size="28" font-weight="700" letter-spacing="5" fill="#5B6570">CODECRAFTSTUDIO.SITE</text></g>
+</svg>
