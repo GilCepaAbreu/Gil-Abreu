@@ -10,8 +10,8 @@
     const selectors = [
       ['.hero .eyebrow', 'hero'], ['.hero h1', 'hero-title'], ['.hero .hero-aside', 'hero'], ['.hero .hero-rule', 'rule'],
       ['.statement .section-label, .statement h2, .statement .lead', 'section'],
-      ['.section-head > *, .method-title > *, .contact-grid > *', 'section'],
-      ['.service-list article, .method li', 'item'], ['.project', 'project'], ['.footer-top > *', 'footer']
+      ['.section-head > *, .method-title > *, .afternow-heading > *, .contact-grid > *', 'section'],
+      ['.service-list article, .method li, .afternow-visual, .afternow-content', 'item'], ['.project', 'project'], ['.footer-top > *', 'footer']
     ];
     selectors.forEach(([selector, kind]) => document.querySelectorAll(selector).forEach((element, index) => {
       element.dataset.reveal = kind;
