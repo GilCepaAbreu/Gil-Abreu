@@ -11,7 +11,7 @@
       ['.hero .eyebrow', 'hero'], ['.hero h1', 'hero-title'], ['.hero .hero-aside', 'hero'], ['.hero .hero-rule', 'rule'],
       ['.statement .section-label, .statement h2, .statement .lead', 'section'],
       ['.section-head > *, .method-title > *, .faq-grid > *, .afternow-heading > *, .contact-grid > *', 'section'],
-      ['.service-list article, .method li, .faq-list details, .afternow-visual, .afternow-content', 'item'], ['.project', 'project'], ['.footer-top > *', 'footer']
+      ['.service-list article, .method li, .faq-list details, .afternow-visual, .afternow-content', 'item'], ['.project-carousel', 'project'], ['.footer-top > *', 'footer']
     ];
     selectors.forEach(([selector, kind]) => document.querySelectorAll(selector).forEach((element, index) => {
       element.dataset.reveal = kind;
@@ -36,11 +36,6 @@
     window.addEventListener('scroll', updateProgress, { passive: true });
     updateProgress();
 
-    document.querySelectorAll('.project').forEach(project => project.addEventListener('pointermove', event => {
-      const rect = project.getBoundingClientRect();
-      project.style.setProperty('--spot-x', `${((event.clientX - rect.left) / rect.width) * 100}%`);
-      project.style.setProperty('--spot-y', `${((event.clientY - rect.top) / rect.height) * 100}%`);
-    }));
   };
 
   if (document.documentElement.classList.contains('loader-enabled')) {
